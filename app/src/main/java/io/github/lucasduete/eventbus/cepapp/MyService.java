@@ -1,12 +1,11 @@
-package io.github.lucasduete.cepapp;
+package io.github.lucasduete.eventbus.cepapp;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
 import android.util.Log;
 
+import org.greenrobot.eventbus.EventBus;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -61,9 +60,7 @@ public class MyService extends Service {
                     Log.d(TAG, "Objeto:");
                     Log.d(TAG, object.toString());
 
-                    Message message = new Message();
-                    message.obj = object;
-                    MainActivity.mainHandle.sendMessage(message);
+                    EventBus.getDefault().post(new Evento(object));
 
                 } catch (Exception ex) {
                     Log.d(TAG, "Deu pau na conversao de json");
@@ -84,10 +81,10 @@ public class MyService extends Service {
                     }
                 }
 
-
             } catch (IOException ex) {
                 Log.d(TAG, ex.getMessage());
             }
+
         }).start();
 
         return Service.START_NOT_STICKY;

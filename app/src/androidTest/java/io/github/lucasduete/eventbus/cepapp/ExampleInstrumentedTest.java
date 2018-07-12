@@ -1,4 +1,4 @@
-package io.github.lucasduete.cepapp;
+package io.github.lucasduete.eventbus.cepapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("io.github.lucasduete.cepapp", appContext.getPackageName());
+        assertEquals("io.github.lucasduete.eventbus.cepapp", appContext.getPackageName());
     }
 }

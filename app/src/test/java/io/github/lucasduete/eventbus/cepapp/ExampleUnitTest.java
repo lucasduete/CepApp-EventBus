@@ -1,4 +1,4 @@
-package io.github.lucasduete.cepapp;
+package io.github.lucasduete.eventbus.cepapp;
 
 import org.junit.Test;
 
